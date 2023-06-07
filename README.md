@@ -4,3 +4,4 @@ The following is a list of the projects contained in this repository, along with
 | Project Name | Description |
 | ------------ | ----------- |
 | `0x00. Python - Hello, World` | Introduction to python programming |
+| `0x01. Python - if/else, loops, functions` | Decision making, loops & functions |

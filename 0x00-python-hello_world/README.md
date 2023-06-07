@@ -1,6 +1,6 @@
 ## 0x00. Python - Hello, World
 
-| Project Name | Description |
+| File Name | Description |
 | -------------| ----------- |
 | `0-run` | Execute python file using bash script |
 | `1-run_inline` | Execute inline python code using a bash script |
