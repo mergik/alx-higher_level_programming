@@ -6,4 +6,4 @@ The following is a list of the projects contained in this repository, along with
 | `0x00. Python - Hello, World` | Introduction to python programming |
 | `0x01. Python - if/else, loops, functions` | Decision making, loops & functions |
 | --- | --- |
-| `0x03. Python - Data Structures: Lists, Tuples | Data structures for storing and accessing objects which belong in a specific order |
+| `0x03. Python - Data Structures: Lists, Tuples` | Data structures for storing and accessing objects which belong in a specific order |
