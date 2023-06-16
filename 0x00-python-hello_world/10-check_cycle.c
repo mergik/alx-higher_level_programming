@@ -7,11 +7,11 @@
  */
 int check_cycle(listint_t *list)
 {
+	listint_t *tortoise = list;
+	listint_t *hare = list;
+
 	if (list == NULL || list->next == NULL)
 		return (0);  /*No cycle if list is empty or has only one node*/
-
-	struct listint_s *tortoise = list;
-	struct listint_s *hare = list;
 
 	while (hare != NULL && hare->next != NULL)
 	{
