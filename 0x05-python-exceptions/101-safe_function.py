@@ -2,7 +2,7 @@
 import sys
 
 def safe_function(fct, *args):
-    """Executes a function safely"""
+    """Executes a function safely."""
     try:
         result = fct(*args)
         return result

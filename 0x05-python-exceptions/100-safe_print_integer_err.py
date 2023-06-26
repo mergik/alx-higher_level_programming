@@ -2,6 +2,7 @@
 import sys
 
 def safe_print_integer_err(value):
+    """Returns a boolean if integer is printed correctly"""
     try:
         value = int(value)  # Convert value to integer if possible
         print("{:d}".format(value))
