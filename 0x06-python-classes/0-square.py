@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
-class Square:
-    """A class representing a square."""
+"""A class representing a square."""
 
+
+class Square:
     def __init__(self):
         """Initialize the Square object (constructor)"""
         pass
