@@ -9,6 +9,8 @@ Attributes:
 
 
 class Square:
+    """A class representing a square."""
+
     def __init__(self, size):
         """
         Initialize the Square object.
