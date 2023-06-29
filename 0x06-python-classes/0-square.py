@@ -4,6 +4,7 @@
 
 
 class Square:
+    """A class representing a square."""
     def __init__(self):
         """Initialize the Square object (constructor)"""
         pass
