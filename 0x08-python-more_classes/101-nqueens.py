@@ -70,7 +70,7 @@ class NQueensSolver:
 
         def backtrack(board, row, solutions):
             if row == n:
-                solutions.append(["".join(row) for row in board])
+                solutions.append([[i, board[i].index('Q')] for i in range(n)])
                 return
 
             for col in range(n):
@@ -104,4 +104,6 @@ if __name__ == '__main__':
 
     # Solve the N queens problem and print the solutions
     solver = NQueensSolver()
-    solutions = solver
+    solutions = solver.solve_nqueens(N)
+    for solution in solutions:
+        print(solution)
