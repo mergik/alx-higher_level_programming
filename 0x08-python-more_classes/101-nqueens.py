@@ -20,7 +20,8 @@ import sys
 
 
 class NQueensSolver:
-    def is_safe(self, board, row, col):
+    @staticmethod
+    def is_safe(board, row, col):
         """
         Check if it's safe to place a queen at the given position.
 
