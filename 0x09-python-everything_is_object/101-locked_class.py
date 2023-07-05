@@ -26,5 +26,7 @@ class LockedClass:
             AttributeError: If the attribute is not 'first_name'.
         """
         if attr != 'first_name':
-            raise AttributeError("'LockedClass' object has no attribute 'last_name'")
+            raise AttributeError(
+                "'LockedClass' object has no attribute 'last_name'"
+            )
         object.__setattr__(self, attr, value)
