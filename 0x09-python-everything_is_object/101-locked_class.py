@@ -27,6 +27,6 @@ class LockedClass:
         """
         if attr != 'first_name':
             raise AttributeError(
-                "'LockedClass' object has no attribute 'last_name'"
+                f"'LockedClass' object has no attribute '{attr}'"
             )
         object.__setattr__(self, attr, value)
