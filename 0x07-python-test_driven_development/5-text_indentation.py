@@ -2,14 +2,15 @@
 """
 This module provides a function for indenting text.
 
-The `text_indentation` function indents a given text by adding 2 new lines after each of the characters '.', '?',
-and ':'.
+The `text_indentation` function indents a given text by adding 2 new lines
+after each of the characters '.', '?', and ':'.
 """
 
 
 def text_indentation(text):
     """
-    Indents a given text by adding 2 new lines after each of the characters '.', '?', and ':'.
+    Indents a given text by adding 2 new lines after each of the characters
+    '.', '?', and ':'.
 
     Args:
         text (str): The text to be indented.
