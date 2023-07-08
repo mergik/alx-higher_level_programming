@@ -8,24 +8,24 @@ My name is Alice
 >>> say_my_name("Bob", None)
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
 
 >>> say_my_name("Charlie", 123)
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
 
 >>> say_my_name(456, "Smith")
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
 
 >>> say_my_name(None, "Johnson")
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
 
 >>> say_my_name()
 Traceback (most recent call last):
 ...
-TypeError: first_name must be a string or last_name must be a string
+TypeError: first_name must be a string
