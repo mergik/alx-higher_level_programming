@@ -1,0 +1,6 @@
+>>> my_list = MyList([4, 2, 6, 1, 8, 3])
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 6, 8]
+>>> empty_list = MyList([])
+>>> empty_list.print_sorted()
+[]
