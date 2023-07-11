@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """
 Script to compute metrics from input lines read from stdin.
-Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
-Each 10 lines and after a keyboard interruption (CTRL + C), the script prints the accumulated statistics.
+Input format:
+<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
+Each 10 lines and after a keyboard interruption (CTRL + C),
+the script prints the accumulated statistics.
 """
 import sys
 
