@@ -20,6 +20,7 @@ def print_metrics(total_size, status_codes):
         count = status_codes[code]
         print("{}: {}".format(code, count))
 
+
 def parse_line(line):
     """
     Parses a line and extracts the file size and status code.
@@ -34,6 +35,7 @@ def parse_line(line):
     file_size = int(line_parts[-1])
     status_code = line_parts[-2]
     return file_size, status_code
+
 
 def process_lines():
     """
@@ -58,6 +60,7 @@ def process_lines():
 
     except KeyboardInterrupt:
         print_metrics(total_size, status_codes)
+
 
 if __name__ == "__main__":
     process_lines()
