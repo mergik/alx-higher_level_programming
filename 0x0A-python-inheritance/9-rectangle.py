@@ -11,7 +11,8 @@ class Rectangle(BaseGeometry):
     """
     A class representing a rectangle.
 
-    This class inherits from the BaseGeometry class and provides functionality specific to rectangles.
+    This class inherits from the BaseGeometry class and provides
+    functionality specific to rectangles.
     """
 
     def __init__(self, width, height):
