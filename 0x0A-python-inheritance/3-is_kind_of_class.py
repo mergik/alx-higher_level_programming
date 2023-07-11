@@ -15,7 +15,7 @@ def is_kind_of_class(obj, a_class):
 
     Returns:
         bool: True if the object is an instance of, or if the object is an
-        instance of a class that inherited frm, the specified class; False otherwise.
+        instance of a class that inherited frm, the specified class;
+        False otherwise.
     """
-
     return isinstance(obj, a_class)
