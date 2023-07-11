@@ -1,66 +1,43 @@
 #!/usr/bin/python3
-"""Module containing a script that reads stdin line by line and computes,
-metrics"""
+"""
+Script to compute metrics from input lines read from stdin.
+Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
+Each 10 lines and after a keyboard interruption (CTRL + C), the script prints the accumulated statistics.
+"""
 import sys
 
 
-def print_metrics(total_size, status_codes):
+def compute_metrics():
     """
-    Prints the metrics computed from the input lines.
-
-    Args:
-        total_size (int): Total file size.
-        status_codes (dict): Dictionary of status codes and their counts.
-
-    Returns:
-        None
-    """
-    print("File size: {}".format(total_size))
-    for code in sorted(status_codes.keys()):
-        count = status_codes[code]
-        print("{}: {}".format(code, count))
-
-
-def parse_line(line):
-    """
-    Parses a line and extracts the file size and status code.
-
-    Args:
-        line (str): Line of input.
-
-    Returns:
-        tuple: Tuple containing the file size (int) and status code (str).
-    """
-    line_parts = line.split()
-    file_size = int(line_parts[-1])
-    status_code = line_parts[-2]
-    return file_size, status_code
-
-
-def process_lines():
-    """
-    Processes input lines, computes metrics, and prints statistics.
+    Function to compute metrics from input lines read from stdin.
 
     Returns:
         None
     """
     total_size = 0
-    status_codes = {}
+    status_counts = {}
 
     try:
-        line_count = 0
-        for line in sys.stdin:
-            file_size, status_code = parse_line(line)
-            total_size += file_size
-            status_codes[status_code] = status_codes.get(status_code, 0) + 1
+        for i, line in enumerate(sys.stdin, start=1):
+            line = line.strip()
+            _, _, _, _, _, status_code, file_size = line.split(" ")
+            total_size += int(file_size)
 
-            line_count += 1
-            if line_count % 10 == 0:
-                print_metrics(total_size, status_codes)
+            if status_code in status_counts:
+                status_counts[status_code] += 1
+            else:
+                status_counts[status_code] = 1
+
+            if i % 10 == 0:
+                print("File size: {:d}".format(total_size))
+                for code in sorted(status_counts.keys()):
+                    print("{:s}: {:d}".format(code, status_counts[code]))
 
     except KeyboardInterrupt:
-        print_metrics(total_size, status_codes)
+        print("File size: {:d}".format(total_size))
+        for code in sorted(status_counts.keys()):
+            print("{:s}: {:d}".format(code, status_counts[code]))
 
 
 if __name__ == "__main__":
-    process_lines()
+    compute_metrics()
