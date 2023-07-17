@@ -103,28 +103,22 @@ class Rectangle(Base):
             f"- {self.__width}/{self.__height}"
         )
 
+    def to_dictionary(self):
+        """Return the dictionary representation of the rectangle."""
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+
     def update(self, *args, **kwargs):
-        """Assign arguments to the attributes."""
-        if len(args) > 0:
-            if len(args) >= 1:
-                self.id = args[0]
-            if len(args) >= 2:
-                self.width = args[1]
-            if len(args) >= 3:
-                self.height = args[2]
-            if len(args) >= 4:
-                self.x = args[3]
-            if len(args) >= 5:
-                self.y = args[4]
+        """Update the attributes of the rectangle."""
+        if args:
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attrs[i], arg)
         else:
             for key, value in kwargs.items():
-                if key == 'id':
-                    self.id = value
-                elif key == 'width':
-                    self.width = value
-                elif key == 'height':
-                    self.height = value
-                elif key == 'x':
-                    self.x = value
-                elif key == 'y':
-                    self.y = value
+                setattr(self, key, value)
