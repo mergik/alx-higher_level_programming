@@ -4,6 +4,8 @@ This module contains the Base class that is used by other classes
 to manage 'id' attribute
 """
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -70,6 +72,17 @@ class Base:
             file.write(json_string)
 
     @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serialize the instances to CSV format and write them to a file.
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                writer.writerow(obj.to_csv_row())
+
+    @classmethod
     def load_from_file(cls):
         """
         Return a list of instances based on a JSON file.
@@ -83,3 +96,76 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserialize instances from a CSV file and return a list of instances.
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.reader(file)
+                instances = []
+                for row in reader:
+                    instances.append(cls.create_from_csv_row(row))
+                return instances
+        except FileNotFoundError:
+            return []
+
+    def to_csv_row(self):
+        """
+        Return list representing the instance attributes for CSV serialization
+        """
+        raise NotImplementedError(
+            "to_csv_row method must be implemented in the child class"
+        )
+
+    @classmethod
+    def create_from_csv_row(cls, row):
+        """
+        Create an instance from a CSV row.
+        """
+        raise NotImplementedError(
+            "create_from_csv_row method must be implemented in the child class"
+        )
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draw all the rectangles and squares using the Turtle graphics module.
+
+        Args:
+            list_rectangles (list): A list of Rectangle instances.
+            list_squares (list): A list of Square instances.
+
+        Returns:
+            None
+        """
+        screen = turtle.Screen()
+        screen.bgcolor("white")
+
+        pen = turtle.Turtle()
+        pen.speed(0)
+
+        for rectangle in list_rectangles:
+            pen.penup()
+            pen.goto(rectangle.x, rectangle.y)
+            pen.pendown()
+            pen.color("red")
+            for _ in range(2):
+                pen.forward(rectangle.width)
+                pen.right(90)
+                pen.forward(rectangle.height)
+                pen.right(90)
+
+        for square in list_squares:
+            pen.penup()
+            pen.goto(square.x, square.y)
+            pen.pendown()
+            pen.color("blue")
+            for _ in range(4):
+                pen.forward(square.size)
+                pen.right(90)
+
+        turtle.done()
