@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Python script that takes URL, sends a request, displays value
+of the Request ID
+"""
 import urllib.request
 import urllib.parse
 import sys
