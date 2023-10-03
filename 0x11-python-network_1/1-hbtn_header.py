@@ -1,10 +1,16 @@
 #!/usr/bin/python3
 import urllib.request
+import urllib.parse
 import sys
 
-url = sys.argv[1]
+if __name__ == "__main__":
+    url = sys.argv[1]
+    email = sys.argv[2]
 
-with urllib.request.urlopen(url) as response:
-    x_request_id = response.headers.get('X-Request-Id')
+    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
+    req = urllib.request.Request(url, data)
 
-print(x_request_id)
+    with urllib.request.urlopen(req) as response:
+        content = response.read()
+
+    print(content.decode('utf-8'))
