@@ -1,5 +1,13 @@
 ## 0x04. Python - More Data Structures: Set, Dictionary
 
+This project explores the use of sets and dictionaries in Python, focusing on their properties and methods. It covers operations like addition, removal, and membership testing.
+
+Key concepts covered in this project include:
+- Creating and manipulating sets
+- Using set methods and functions
+- Understanding set operations like union, intersection, and difference
+- Working with dictionaries
+
 | File Name | Description     |
 | ------------ | ------------    |
 | `0-square_matrix_simple.py`     | Computes the square of each element in a matrix and returns the result.    |

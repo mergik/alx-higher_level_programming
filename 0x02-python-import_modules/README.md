@@ -1,4 +1,16 @@
 ## 0x02. Python - import & modules
+This directory contains Python scripts that demonstrate the use of imports and modules in Python. The project aims to familiarize students with importing functions, creating modules, and using command-line arguments in Python programming.
+
+Key concepts covered in this project include:
+- Importing functions from other files
+- Creating and using modules
+- Handling command-line arguments
+- Using built-in functions like `dir()`
+- Understanding variable scope and the `if __name__ == "__main__":` idiom
+
+The scripts in this directory showcase various operations such as basic arithmetic, working with command-line arguments, discovering names in a module, and implementing a simple calculator. They also demonstrate different ways of importing functions and modules, as well as some advanced Python techniques.
+
+This project builds upon basic Python knowledge and introduces more advanced concepts related to structuring and organizing code across multiple files.
 
 | File Name               | Description                                                           |
 |-------------------------|-----------------------------------------------------------------------|

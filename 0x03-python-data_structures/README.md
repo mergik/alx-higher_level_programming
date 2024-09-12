@@ -1,5 +1,14 @@
 # 0x03. Python - Data Structures: Lists, Tuples
 
+This project focuses on the use of lists and tuples in Python, exploring their properties and methods. It covers basic operations, list comprehensions, and tuple unpacking.
+
+Key concepts covered in this project include:
+- Creating and manipulating lists
+- Accessing elements in a list
+- Using list methods and functions
+- Understanding list slicing
+- Working with tuples
+
 | File Name                   | Description                                                       |
 |-----------------------------|-------------------------------------------------------------------|
 | `0-print_list_integer.py`     | Prints all integers in a given list.                              |
